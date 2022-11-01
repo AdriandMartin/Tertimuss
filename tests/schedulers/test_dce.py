@@ -1,5 +1,5 @@
 import unittest
-from tertimuss.schedulers.baruah_burns_ce import SBaruahBurnsCE
+from tertimuss.schedulers.dce import SDeutschbeinCE
 from tertimuss.simulation_lib.simulator import execute_scheduler_simulation_simple, SimulationConfiguration
 from tertimuss.simulation_lib.system_definition import TaskSet
 from tertimuss.simulation_lib.system_definition.utils import generate_default_cpu, default_environment_specification
@@ -7,9 +7,9 @@ from tests.schedulers._common_scheduler_tests_utils import create_implicit_deadl
     periodic_implicit_deadline_tasks
 
 
-class BaruahBurnsCETest(unittest.TestCase):
+class DeutschbeinCETest(unittest.TestCase):
     '''
-    Testing class for the Baruah-Burns Cyclic Executive's Scheduler
+    Testing class for the Deutschbein Cyclic Executive's Scheduler
     '''
 
     # --------------------------------------------------------------------------
@@ -55,8 +55,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -104,8 +104,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -153,8 +153,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -204,8 +204,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -253,8 +253,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -302,8 +302,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -357,8 +357,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -410,8 +410,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -463,8 +463,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -523,8 +523,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -581,8 +581,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -639,8 +639,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -695,8 +695,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -749,8 +749,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -803,8 +803,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -855,8 +855,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -905,8 +905,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -955,8 +955,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -1016,8 +1016,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -1075,8 +1075,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -1134,8 +1134,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -1172,7 +1172,7 @@ class BaruahBurnsCETest(unittest.TestCase):
                     |---------|---------|---------|---------|
                     0         5         10        15        20
         - Commentaries for this test:
-            This test is a copy of the ALECS test, using the Baruah-Burns CE scheduler instead
+            This test is a copy of the ALECS test, using the Deutschbein CE scheduler instead
         '''
         periodic_tasks = [
             create_implicit_deadline_periodic_task_h_rt(0, 10000, 20.0),
@@ -1197,8 +1197,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -1233,7 +1233,7 @@ class BaruahBurnsCETest(unittest.TestCase):
                     |---------|---------|---------|---------|
                     0         5         10        15        20
         - Commentaries for this test:
-            This test is a copy of the ALECS test, using the Baruah-Burns CE scheduler instead
+            This test is a copy of the ALECS test, using the Deutschbein CE scheduler instead
         '''
         periodic_tasks = [
             create_implicit_deadline_periodic_task_h_rt(0, 10000, 20.0),
@@ -1258,8 +1258,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -1294,7 +1294,7 @@ class BaruahBurnsCETest(unittest.TestCase):
                     |---------|---------|---------|---------|
                     0         5         10        15        20
         - Commentaries for this test:
-            This test is a copy of the ALECS test, using the Baruah-Burns CE scheduler instead
+            This test is a copy of the ALECS test, using the Deutschbein CE scheduler instead
         '''
         periodic_tasks = [
             create_implicit_deadline_periodic_task_h_rt(0, 10000, 20.0),
@@ -1319,8 +1319,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -1341,7 +1341,7 @@ class BaruahBurnsCETest(unittest.TestCase):
         - Task set:
             tests.schedulers._common_scheduler_tests_utils.periodic_implicit_deadline_tasks
         - Commentaries for this test:
-            This test is a copy of the CALECS test, using the Baruah-Burns CE scheduler instead
+            This test is a copy of the CALECS test, using the Deutschbein CE scheduler instead
         '''
         task_set = TaskSet(periodic_tasks=[create_implicit_deadline_periodic_task_h_rt(j, i[0], i[1]) for j, i in
                                            enumerate(periodic_implicit_deadline_tasks)],
@@ -1357,8 +1357,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -1377,7 +1377,7 @@ class BaruahBurnsCETest(unittest.TestCase):
         - Task set:
             tests.schedulers._common_scheduler_tests_utils.periodic_implicit_deadline_tasks
         - Commentaries for this test:
-            This test is a copy of the CALECS test, using the Baruah-Burns CE scheduler instead
+            This test is a copy of the CALECS test, using the Deutschbein CE scheduler instead
         '''
         task_set = TaskSet(periodic_tasks=[create_implicit_deadline_periodic_task_h_rt(j, i[0], i[1]) for j, i in
                                            enumerate(periodic_implicit_deadline_tasks)],
@@ -1393,8 +1393,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -1413,7 +1413,7 @@ class BaruahBurnsCETest(unittest.TestCase):
         - Task set:
             tests.schedulers._common_scheduler_tests_utils.periodic_implicit_deadline_tasks
         - Commentaries for this test:
-            This test is a copy of the CALECS test, using the Baruah-Burns CE scheduler instead
+            This test is a copy of the CALECS test, using the Deutschbein CE scheduler instead
         '''
         task_set = TaskSet(periodic_tasks=[create_implicit_deadline_periodic_task_h_rt(j, i[0], i[1]) for j, i in
                                            enumerate(periodic_implicit_deadline_tasks)],
@@ -1429,8 +1429,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct execution
@@ -1490,8 +1490,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -1549,8 +1549,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -1610,8 +1610,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct execution
@@ -1669,8 +1669,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct execution
@@ -1723,8 +1723,8 @@ class BaruahBurnsCETest(unittest.TestCase):
                 sporadic_tasks_jobs=[],
                 processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
                 environment_specification=default_environment_specification(),
-                simulation_options=SimulationConfiguration(id_debug=True),
-                scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+                simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+                scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
             )
             # Error due to no error detection
             assert False, "No assertion exception caught when it was expected"
@@ -1776,8 +1776,8 @@ class BaruahBurnsCETest(unittest.TestCase):
                 sporadic_tasks_jobs=[],
                 processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
                 environment_specification=default_environment_specification(),
-                simulation_options=SimulationConfiguration(id_debug=True),
-                scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+                simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+                scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
             )
             # Error due to no error detection
             assert False, "No assertion exception caught when it was expected"
@@ -1829,8 +1829,8 @@ class BaruahBurnsCETest(unittest.TestCase):
                 sporadic_tasks_jobs=[],
                 processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
                 environment_specification=default_environment_specification(),
-                simulation_options=SimulationConfiguration(id_debug=True),
-                scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+                simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+                scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
             )
             # Error due to no error detection
             assert False, "No assertion exception caught when it was expected"
@@ -1884,8 +1884,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False)
         )
 
         # Correct error detection
@@ -1936,8 +1936,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=False, use_mcnaughton_rule=True)
         )
 
         # Correct error detection
@@ -1988,8 +1988,8 @@ class BaruahBurnsCETest(unittest.TestCase):
             sporadic_tasks_jobs=[],
             processor_definition=generate_default_cpu(number_of_cores, available_frequencies),
             environment_specification=default_environment_specification(),
-            simulation_options=SimulationConfiguration(id_debug=True),
-            scheduler=SBaruahBurnsCE(activate_debug=True, preemptive_ce=True)
+            simulation_options=SimulationConfiguration(id_debug=True, nonparallelization_check=True),
+            scheduler=SDeutschbeinCE(activate_debug=True, preemptive_ce=True)
         )
 
         # Correct error detection
